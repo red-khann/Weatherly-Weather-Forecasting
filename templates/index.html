@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weatherly - Weather Forecast</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <h2 class="logo">☁ Weatherly</h2>
+
+            <div class="search-box">
+
+    <div class="search-wrapper">
+
+        <input
+            type="text"
+            id="cityInput"
+            aria-label="Search for a city"
+            aria-autocomplete="list"
+            aria-controls="suggestions"
+            aria-expanded="false"
+            placeholder="Search an Indian city, town or village..."
+            autocomplete="off"
+        >
+
+        <div id="suggestions" class="suggestions" role="listbox" aria-label="City suggestions"></div>
+
+    </div>
+
+    <button id="searchBtn">Search</button>
+
+</div>
+
+        </header>
+
+        <!-- Messages -->
+        <p id="searchMessage" class="status-message" role="status" aria-live="polite" hidden></p>
+
+        <!-- Current Weather -->
+        <section class="current-weather">
+
+            <div class="loading-overlay" role="status" aria-live="polite">
+                <span class="overlay-spinner" aria-hidden="true"></span>
+                <strong>Loading your local forecast</strong>
+                <span>Finding the nearest weather data for your area</span>
+            </div>
+
+            <div class="weather-info">
+
+                <p class="label">CURRENT WEATHER</p>
+
+                <h2 id="cityName">Searching...</h2>
+
+                <p id="currentDate" class="date"></p>
+
+                <h1 id="temperature" class="temperature">--°</h1>
+
+                <h3 id="conditionText">Loading weather...</h3>
+
+                <p id="feelsLike">Feels like --°</p>
+
+            </div>
+
+            <div id="weatherIcon" class="weather-icon">
+                🌤️
+            </div>
+
+        </section>
+
+        <!-- Weather Statistics -->
+        <section class="stats-grid">
+
+            <div class="card">
+                <p>💧 Humidity</p>
+                <h2 id="humidity">--%</h2>
+            </div>
+
+            <div class="card">
+                <p>💨 Wind Speed</p>
+                <h2 id="windSpeed">-- km/h</h2>
+            </div>
+
+            <div class="card">
+                <p>🌡 Pressure</p>
+                <h2 id="pressure">-- hPa</h2>
+            </div>
+
+            <div class="card">
+                <p>👁 Visibility</p>
+                <h2 id="visibility">-- km</h2>
+            </div>
+
+        </section>
+
+        <!-- Hourly Forecast -->
+        <section class="forecast-section">
+
+            <h2>Hourly Forecast</h2>
+
+            <div class="hourly-grid" id="hourlyGrid">
+                <p>Loading forecast...</p>
+            </div>
+
+        </section>
+
+        <!-- Weekly Forecast -->
+        <section class="forecast-section">
+
+            <h2>7-Day Forecast</h2>
+
+            <div class="weekly-list" id="weeklyList">
+                <p>Loading forecast...</p>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <p>
+                Weather data by
+                <a href="https://open-meteo.com/"
+                   target="_blank"
+                   rel="noopener noreferrer">Open-Meteo</a>
+            </p>
+
+            <p>Location is used for weather and nearby place names via <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> and <a href="https://www.bigdatacloud.com/" target="_blank" rel="noopener noreferrer">BigDataCloud</a>. If browser location is unavailable, an approximate location from your internet connection may be used.</p>
+
+            <p>Weatherly © 2026</p>
+
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+
+</body>
+</html>
