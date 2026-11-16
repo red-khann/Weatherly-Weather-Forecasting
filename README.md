@@ -1,6 +1,6 @@
 # Weatherly Weather Forecasting
 
-Weatherly is a Flask weather dashboard that lets users search for locations, view current conditions and forecasts, and use their browser location when they grant permission.
+Weatherly is a Flask-powered weather dashboard for current conditions, hourly and seven-day forecasts, India-first location search, and weather near the user's current location.
 
 ## Features
 
